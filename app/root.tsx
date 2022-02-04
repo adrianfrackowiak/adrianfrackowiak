@@ -8,9 +8,14 @@ import {
 } from "remix";
 import type { MetaFunction } from "remix";
 import styles from "./tailwind.css";
+import tailwind from "./styles/app.css";
+import { Layout } from "./components/Layout";
 
 export function links() {
-  return [{ rel: "stylesheet", href: styles }];
+  return [
+    { rel: "stylesheet", href: styles },
+    { rel: "stylesheet", href: tailwind },
+  ];
 }
 
 export const meta: MetaFunction = () => {
@@ -27,10 +32,12 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
+        <Layout>
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          {process.env.NODE_ENV === "development" && <LiveReload />}
+        </Layout>
       </body>
     </html>
   );

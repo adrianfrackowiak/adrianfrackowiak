@@ -1,6 +1,7 @@
-import { useLoaderData, json, LoaderFunction } from "remix";
+import { useLoaderData, json, LoaderFunction, Link } from "remix";
 import { GraphQLClient, gql } from "graphql-request";
 import { IBlogPost } from "../interfaces/IBlogPost";
+import { MdKeyboardBackspace } from "react-icons/md";
 
 const GetBlogPostBySlug = gql`
   query BlogPageQuery($slug: String!) {
@@ -12,6 +13,7 @@ const GetBlogPostBySlug = gql`
       }
       date
       id
+      imgurl
     }
   }
 `;
@@ -41,13 +43,22 @@ export default function BlogPostPage() {
   const date: Date = new Date(blogpost.date);
 
   return (
-    <div>
-      <h1>{blogpost.title}</h1>
-      <p>
+    <div className="py-8">
+      <h1 className="text-5xl font-merriweather mb-4">{blogpost.title}</h1>
+      <p className="text-gray-400 font-light">
         {date.toLocaleDateString()}{" "}
         {date.toLocaleTimeString("en", { timeStyle: "short" })}
       </p>
-      <div dangerouslySetInnerHTML={{ __html: blogpost.content.html }} />
+      <div
+        dangerouslySetInnerHTML={{ __html: blogpost.content.html }}
+        className="blogcontent pt-12"
+      />
+      <Link to="/">
+        <button className="mt-8 flex items-center font-semibold">
+          <MdKeyboardBackspace className="text-[#4934eb] text-2xl mr-2" /> Go
+          back
+        </button>
+      </Link>
     </div>
   );
 }

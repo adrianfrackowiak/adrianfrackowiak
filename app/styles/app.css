@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap");
+
+.blogcontent h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.blogcontent h3 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.blogcontent h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.blogcontent img {
+  margin: 2rem 0;
+}
+
+.blogcontent p {
+  margin-bottom: 1rem;
+}
+
+.blogcontent a {
+  color: #4934eb;
+  font-weight: 600;
+}

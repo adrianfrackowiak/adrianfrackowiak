@@ -6,4 +6,5 @@ export interface IBlogPost {
   };
   date: string;
   id: string;
+  imgurl: string;
 }
