@@ -18,12 +18,9 @@ const GetBlogPostsQuery = gql`
 `;
 
 export let loader: LoaderFunction = async () => {
-  const api = process.env.REMIX_GRAPHCMS_API;
-  const auth = process.env.REMIX_GRAPHCMS_AUTH;
-
-  const graphcms = new GraphQLClient(api ? api : "", {
+  const graphcms = new GraphQLClient(process.env.REMIX_GRAPHCMS_API, {
     headers: {
-      authorization: auth ? auth : "",
+      authorization: process.env.REMIX_GRAPHCMS_AUTH,
     },
   });
 

@@ -19,7 +19,10 @@ export function links() {
 }
 
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
+  return {
+    title:
+      "Adrian Frąckowiak - Software Engineer. Frontend Developer. | adrianfrackowiak.com",
+  };
 };
 
 export default function App() {
