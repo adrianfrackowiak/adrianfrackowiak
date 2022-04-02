@@ -9,12 +9,13 @@ import {
 import type { MetaFunction } from "remix";
 import styles from "./tailwind.css";
 import tailwind from "./styles/app.css";
-import { Layout } from "./components/Layout";
+import satoshi from "./styles/satoshi.css";
 
 export function links() {
   return [
     { rel: "stylesheet", href: styles },
     { rel: "stylesheet", href: tailwind },
+    { rel: "stylesheet", href: satoshi },
   ];
 }
 
@@ -34,13 +35,11 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
-        <Layout>
-          <Outlet />
-          <ScrollRestoration />
-          <Scripts />
-          {process.env.NODE_ENV === "development" && <LiveReload />}
-        </Layout>
+      <body className="min-h-screen flex flex-col w-full overflow-x-hidden">
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
+        {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
   );

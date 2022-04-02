@@ -2,6 +2,7 @@ import { useLoaderData, json, LoaderFunction, Link } from "remix";
 import { GraphQLClient, gql } from "graphql-request";
 import { IBlogPost } from "../interfaces/IBlogPost";
 import { MdKeyboardBackspace } from "react-icons/md";
+import { Header } from "~/components/HomePage/Header";
 
 const GetBlogPostBySlug = gql`
   query BlogPageQuery($slug: String!) {
@@ -40,7 +41,7 @@ export default function BlogPostPage() {
   const date: Date = new Date(blogpost.date);
 
   return (
-    <div className="py-8">
+    <div className="flex flex-col items-center flex-1 max-w-7xl mx-auto h-full font-satoshi selection:bg-blue-700 transition-colors bg-white py-20">
       <h1 className="text-5xl font-merriweather mb-4">{blogpost.title}</h1>
       <p className="text-gray-400 font-light">
         {date.toLocaleDateString()}{" "}
