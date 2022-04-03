@@ -56,8 +56,25 @@ body {
   /* 1 */
   line-height: inherit;
   /* 2 */
+  overflow-y: hidden
 }
 
+body::-webkit-scrollbar {
+  background-color: transparent;
+  width: 18px;
+}
+
+body::-webkit-scrollbar,body::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border: 6px solid transparent;
+
+}
+
+body::-webkit-scrollbar-thumb {
+	border-radius: 30px;
+	color: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 0 10px;
+}
 /*
 1. Add the correct height in Firefox.
 2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
@@ -495,10 +512,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: 10rem;
 }
 
-.left-20 {
-  left: 5rem;
-}
-
 .bottom-0 {
   bottom: 0px;
 }
@@ -523,6 +536,30 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 1rem;
 }
 
+.bottom-48 {
+  bottom: 12rem;
+}
+
+.-bottom-48 {
+  bottom: -12rem;
+}
+
+.-bottom-24 {
+  bottom: -6rem;
+}
+
+.-bottom-0 {
+  bottom: -0px;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
+.left-1\/2 {
+  left: 50%;
+}
+
 .z-\[1000\] {
   z-index: 1000;
 }
@@ -531,14 +568,43 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 20;
 }
 
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.-z-10 {
+  z-index: -10;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.z-30 {
+  z-index: 30;
+}
+
+.z-\[990\] {
+  z-index: 990;
+}
+
+.z-\[9999\] {
+  z-index: 9999;
 }
 
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 .mb-4 {
@@ -565,12 +631,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1rem;
 }
 
+.block {
+  display: block;
+}
+
 .inline-block {
   display: inline-block;
 }
 
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-full {
@@ -589,6 +663,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 16rem;
 }
 
+.h-1 {
+  height: 0.25rem;
+}
+
 .h-\[2px\] {
   height: 2px;
 }
@@ -599,6 +677,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-\[24rem\] {
   height: 24rem;
+}
+
+.h-48 {
+  height: 12rem;
 }
 
 .min-h-screen {
@@ -629,20 +711,36 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 36rem;
 }
 
-.max-w-\[450px\] {
-  max-width: 450px;
-}
-
 .max-w-7xl {
   max-width: 80rem;
 }
 
-.max-w-6xl {
-  max-width: 72rem;
+.max-w-\[450px\] {
+  max-width: 450px;
 }
 
 .flex-1 {
   flex: 1 1 0%;
+}
+
+.translate-x-1\/2 {
+  --tw-translate-x: 50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-1\/2 {
+  --tw-translate-y: 50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-1\/2 {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-pointer {
@@ -671,6 +769,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-between {
   justify-content: space-between;
+}
+
+.space-x-12 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(3rem * var(--tw-space-x-reverse));
+  margin-left: calc(3rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
@@ -717,19 +821,33 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-blue-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.p-2 {
+  padding: 0.5rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .px-40 {
   padding-left: 10rem;
   padding-right: 10rem;
+}
+
+.py-40 {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .px-48 {
@@ -765,11 +883,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
 }
 
 .pt-12 {
@@ -864,6 +977,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.opacity-20 {
+  opacity: 0.2;
 }
 
 .transition-colors {

@@ -1,13 +1,33 @@
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { ProjectsList } from "~/content/projects";
 
 export const Projects = () => {
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+  });
+
   return (
-    <div className="w-1/2 h-full">
+    <div ref={ref} className="w-1/2 h-full">
       <ul className="h-full flex flex-col items-start space-y-20">
         {ProjectsList.map(
           ({ title, description, tags, github, live }, index) => {
             return (
-              <li key={index} className="cursor-pointer">
+              <motion.li
+                key={index}
+                initial={{ x: -200, opacity: 0 }}
+                animate={
+                  inView && {
+                    x: 0,
+                    opacity: 1,
+                    transition: {
+                      delay: 0.3 * index,
+                      ease: [0.6, 0.01, -0.05, 0.95],
+                      duration: 2,
+                    },
+                  }
+                }
+              >
                 <h3 className="text-[2rem] max-w-[450px]">{title}</h3>
                 <p className="text-[1.25rem] my-4 font-light max-w-[450px] text-gray-400">
                   {description}
@@ -24,7 +44,7 @@ export const Projects = () => {
                     );
                   })}
                 </ul>
-              </li>
+              </motion.li>
             );
           }
         )}

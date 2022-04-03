@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  overflow-y: hidden
+}
+
+body::-webkit-scrollbar {
+  background-color: transparent;
+  width: 18px;
+}
+
+body::-webkit-scrollbar,body::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border: 6px solid transparent;
+
+}
+
+body::-webkit-scrollbar-thumb {
+	border-radius: 30px;
+	color: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 0 10px;
+}
+
 .animated-gradient {
   animation: flow 10s ease-in-out infinite;
   background: radial-gradient(#2980b9, #6dd5fa);

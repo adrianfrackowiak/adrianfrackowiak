@@ -5,6 +5,7 @@ import { Hero } from "~/components/HomePage/Hero";
 import { Content } from "~/components/HomePage/Content";
 import { Footer } from "~/components/HomePage/Footer";
 import { Curtain } from "~/components/HomePage/Curtain";
+import { useEffect } from "react";
 
 const GetBlogPostsQuery = gql`
   {
@@ -33,8 +34,14 @@ export let loader: LoaderFunction = async () => {
 };
 
 export default function Index() {
+  useEffect(() => {
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 h-full font-satoshi selection:bg-blue-700 transition-colors bg-white">
+    <div className="flex flex-col flex-1 mx-auto h-full font-satoshi selection:bg-blue-700 transition-colors bg-white">
       <Curtain />
       <Header />
       <Hero />
