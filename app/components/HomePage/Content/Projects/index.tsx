@@ -8,7 +8,7 @@ export const Projects = () => {
   });
 
   return (
-    <div ref={ref} className="w-1/2 h-full">
+    <div ref={ref} className="projects w-1/2 h-full">
       <ul className="h-full flex flex-col items-start space-y-20">
         {ProjectsList.map(
           ({ title, description, tags, github, live }, index) => {
@@ -48,6 +48,27 @@ export const Projects = () => {
             );
           }
         )}
+        <motion.li
+          initial={{ x: -200, opacity: 0 }}
+          animate={
+            inView && {
+              x: 0,
+              opacity: 1,
+              transition: {
+                delay:
+                  0.3 *
+                  (ProjectsList.reduce((a, obj) => Object.keys(obj).length, 0) -
+                    2),
+                ease: [0.6, 0.01, -0.05, 0.95],
+                duration: 2,
+              },
+            }
+          }
+        >
+          <h3 className="text-[2rem] max-w-[450px]">
+            Check my other projects on my Github profile!
+          </h3>
+        </motion.li>
       </ul>
     </div>
   );

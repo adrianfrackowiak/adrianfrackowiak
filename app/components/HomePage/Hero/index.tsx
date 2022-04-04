@@ -8,8 +8,6 @@ export const Hero = () => {
     if (isAnimationEnd) {
       document.body.style.overflowY = "scroll";
     }
-
-    console.log(isAnimationEnd);
   }, [isAnimationEnd]);
 
   return (

@@ -17,13 +17,12 @@ export const Posts = () => {
   return (
     <div
       ref={ref}
-      className="w-1/2 font-normal leading-none space-y-10 flex flex-col items-center"
+      className="posts w-1/2 max-h-screen font-normal leading-none space-y-10 flex flex-col justify-center items-center"
     >
-      {posts.map((post, index) => {
+      {posts.slice(0, 2).map((post, index) => {
         return (
-          <Link to={post.slug}>
+          <Link key={index} to={post.slug}>
             <motion.div
-              key={index}
               initial={{ x: 200, opacity: 0 }}
               animate={
                 inView && {

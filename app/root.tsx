@@ -9,13 +9,15 @@ import {
 import type { MetaFunction } from "remix";
 import styles from "./tailwind.css";
 import tailwind from "./styles/app.css";
-import satoshi from "./styles/satoshi.css";
 
 export function links() {
   return [
     { rel: "stylesheet", href: styles },
     { rel: "stylesheet", href: tailwind },
-    { rel: "stylesheet", href: satoshi },
+    {
+      rel: "stylesheet",
+      href: "https://api.fontshare.com/css?f[]=satoshi@1,2&display=swap",
+    },
   ];
 }
 
@@ -32,6 +34,10 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link
+          href="https://api.fontshare.com/css?f[]=satoshi@1,2&display=swap"
+          rel="stylesheet"
+        ></link>
         <Meta />
         <Links />
       </head>

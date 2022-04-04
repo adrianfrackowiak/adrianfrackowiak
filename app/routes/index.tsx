@@ -41,7 +41,7 @@ export default function Index() {
   }, []);
 
   return (
-    <div className="flex flex-col flex-1 mx-auto h-full font-satoshi selection:bg-blue-700 transition-colors bg-white">
+    <div className="flex flex-col flex-1 mx-auto h-full selection:bg-blue-700 transition-colors bg-white">
       <Curtain />
       <Header />
       <Hero />

@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-  overflow-y: hidden
+  overflow-y: hidden;
+  font-family: 'Satoshi', sans-serif;
 }
 
 body::-webkit-scrollbar {
