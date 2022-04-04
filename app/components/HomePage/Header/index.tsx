@@ -7,8 +7,8 @@ export const Header = () => {
   const [isHoverEmail, setIsHoverEmail] = useState<boolean>(false);
 
   return (
-    <div className="min-h-screen text-black flex w-screen justify-center inset-0 px-20 relative top-0">
-      <header className="w-full h-[16rem] flex justify-between items-center z-20 px-20">
+    <div className="min-h-screen text-black flex w-full justify-center inset-0 px-4 lg:px-20 relative top-0">
+      <header className="w-full h-32 lg:h-[16rem] flex justify-between items-center z-20 px-4 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{
@@ -26,7 +26,7 @@ export const Header = () => {
             navigator.clipboard.writeText("adrianfrackowiak@icloud.com")
           }
         >
-          <h3 className="text-[1.5rem] cursor-pointer">
+          <h3 className="text-[1rem] lg:text-[1.5rem] cursor-pointer">
             adrianfrackowiak@icloud.com
           </h3>
           <motion.div
@@ -46,7 +46,7 @@ export const Header = () => {
                     },
                   }
             }
-            className="bg-black h-1"
+            className="bg-black h-0.5 lg:h-1"
           />
         </motion.div>
         <motion.div
@@ -89,7 +89,7 @@ export const Header = () => {
               duration: 1,
             },
           }}
-          className={`inline-block text-[6rem] font-medium`}
+          className={`inline-block text-[1.5rem] sm:text-[2.5rem] lg:text-[6rem] font-medium`}
         >
           I'm Adrian Frąckowiak, <br /> a{" "}
           <span className="font-black">React Developer</span>.

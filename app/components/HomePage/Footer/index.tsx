@@ -3,9 +3,9 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 export const Footer = () => {
   return (
-    <div className="relative w-screen min-h-screen flex items-center px-48">
-      <div className="h-screen flex flex-col justify-center ">
-        <h2 className="text-[1.75rem] flex items-center mb-10">
+    <div className="relative w-screen min-h-screen flex items-center px-8 lg:px-48">
+      <div className="h-screen flex flex-col justify-center">
+        <h2 className="text-[1rem] lg:text-[1.75rem] flex items-center mb-10">
           Let's work together!{" "}
           <span>
             <a href="https://github.com/adrianfrackowiak/" target="_blank">
@@ -23,13 +23,13 @@ export const Footer = () => {
         </h2>
         <a
           href="mailto:adrianfrackowiak@icloud.com"
-          className="font-extrabold text-[6rem] leading-none hover:text-blue-700 transition-all"
+          className="font-extrabold text-[2rem] lg:text-[6rem] leading-none hover:text-blue-700 transition-all break-all"
         >
           adrianfrackowiak@icloud.com
         </a>
       </div>
 
-      <footer className="absolute bottom-0 left-0 w-full px-48 h-16 flex justify-between items-center">
+      <footer className="absolute text-[0.8125rem] lg:text-[1rem] text-center bottom-0 left-0 w-full px-8 lg:px-48 h-16 space-y-4 lg:space-y-0 flex flex-col md:flex-row justify-center md:justify-between items-center">
         <p>
           2022 &copy;{" "}
           <a
@@ -39,7 +39,7 @@ export const Footer = () => {
             adrianfrackowiak.com
           </a>
         </p>
-        <ul className="flex items-center space-x-12">
+        <ul className="flex items-center justify-center md:justify-start space-x-12">
           <li className="hover:text-blue-700 transition-all">
             <a href="https://github.com/adrianfrackowiak/" target="_blank">
               Github

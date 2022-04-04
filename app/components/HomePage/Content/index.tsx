@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Posts } from "./Posts";
 import { Projects } from "./Projects";
 
@@ -8,6 +8,21 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const Content = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const isBrowser = typeof window !== "undefined";
+  const [width, setWidth] = useState<number | false>(
+    isBrowser && window.innerWidth
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = width <= 1024;
 
   useEffect(() => {
     if (ref.current) {
@@ -16,7 +31,7 @@ export const Content = () => {
           trigger: ref.current.querySelector(".posts"),
           endTrigger: ref.current.querySelector(".projects"),
           end: "bottom bottom",
-          pin: true,
+          pin: isMobile ? false : true,
           pinSpacing: false,
         },
       });
@@ -25,7 +40,10 @@ export const Content = () => {
 
   return (
     <div className="relative w-screen min-h-screen">
-      <div ref={ref} className="w-full h-full flex px-40 py-40">
+      <div
+        ref={ref}
+        className="w-full h-full flex flex-col lg:flex-row lg:px-40 py-40"
+      >
         <Projects />
         <Posts />
       </div>

@@ -4,6 +4,7 @@
 
 body {
   overflow-y: hidden;
+  overflow-x: hidden;
   font-family: 'Satoshi', sans-serif;
 }
 

@@ -17,11 +17,15 @@ export const Posts = () => {
   return (
     <div
       ref={ref}
-      className="posts w-1/2 max-h-screen font-normal leading-none space-y-10 flex flex-col justify-center items-center"
+      className="posts w-full lg:w-1/2 max-h-screen font-normal leading-none space-y-10 grid grid-cols-1 px-8 py-20 lg:py-0"
     >
       {posts.slice(0, 2).map((post, index) => {
         return (
-          <Link key={index} to={post.slug}>
+          <Link
+            key={index}
+            to={post.slug}
+            className="flex items-center justify-center"
+          >
             <motion.div
               initial={{ x: 200, opacity: 0 }}
               animate={
@@ -35,13 +39,13 @@ export const Posts = () => {
                   },
                 }
               }
-              className="w-[36rem] h-[24rem] overflow-hidden relative"
+              className="w-full h-[18rem] md:w-[36rem] md:h-[24rem] self-center flex items-center justify-center overflow-hidden relative"
             >
-              <h3 className="absolute px-6 py-3 z-20 font-bold text-2xl text-white bg-black bottom-4 left-4">
+              <h3 className="absolute px-6 py-3 z-20 font-bold text-[1rem] md:text-2xl text-white bg-black bottom-4 left-4">
                 {post.title}
               </h3>
               <motion.div
-                className="w-[36rem] h-[24rem]"
+                className="w-full h-[18rem] md:w-[36rem] md:h-[24rem]"
                 whileHover={{
                   scale: 1.1,
                   transition: { ease: [0.6, 0.01, -0.05, 0.95], duration: 1 },
