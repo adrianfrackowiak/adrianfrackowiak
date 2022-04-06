@@ -34,6 +34,14 @@ export const Projects = () => {
                 <p className="text-[0.8125rem] lg:text-[1.25rem] my-4 font-light w-full sm:max-w-[450px] text-gray-400">
                   {description}
                 </p>
+                <div className="flex space-x-12 my-6">
+                  <a href={github} target="_blank">
+                    Github
+                  </a>
+                  <a href={live} target="_blank">
+                    Live
+                  </a>
+                </div>
                 <ul className="flex max-w-[450px] flex-wrap">
                   {tags.map((tech, index) => {
                     return (
@@ -68,7 +76,15 @@ export const Projects = () => {
           }
         >
           <h3 className="text-[1rem] lg:text-[2rem] max-w-[450px] font-bold lg:font-normal">
-            Check my other projects on my Github profile!
+            Check my other projects on my{" "}
+            <a
+              href="https://github.com/adrianfrackowiak"
+              target="_blank"
+              className="font-bold"
+            >
+              Github
+            </a>{" "}
+            profile!
           </h3>
         </motion.li>
       </ul>
