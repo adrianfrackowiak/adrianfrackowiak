@@ -5,7 +5,9 @@ import { Hero } from "~/components/HomePage/Hero";
 import { Content } from "~/components/HomePage/Content";
 import { Footer } from "~/components/HomePage/Footer";
 import { Curtain } from "~/components/HomePage/Curtain";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Menu } from "~/components/Menu";
+import { AnimatePresence } from "framer-motion";
 
 const GetBlogPostsQuery = gql`
   {
@@ -30,10 +32,13 @@ export let loader: LoaderFunction = async () => {
   });
 
   const { blogposts } = await graphcms.request(GetBlogPostsQuery);
+
   return json({ blogposts });
 };
 
 export default function Index() {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
   useEffect(() => {
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
@@ -43,8 +48,11 @@ export default function Index() {
   return (
     <div className="flex flex-col flex-1 mx-auto h-full selection:bg-blue-700 transition-colors bg-white">
       <Curtain />
-      <Header />
-      <Hero />
+      <AnimatePresence>
+        {isMenuOpen && <Menu setIsMenuOpen={setIsMenuOpen} />}
+      </AnimatePresence>
+      <Header setIsMenuOpen={setIsMenuOpen} />
+      <Hero isMenuOpen={isMenuOpen} />
       <Content />
       <Footer />
     </div>

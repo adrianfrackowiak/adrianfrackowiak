@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
-export const Header = () => {
+export const Header: React.FC<{
+  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
+}> = ({ setIsMenuOpen }) => {
   const [isHoverHamburgerMenu, setIsHoverHamburgerMenu] =
     useState<boolean>(false);
   const [isHoverEmail, setIsHoverEmail] = useState<boolean>(false);
@@ -20,12 +22,31 @@ export const Header = () => {
               duration: 1,
             },
           }}
-          onHoverStart={() => setIsHoverEmail(true)}
+          onHoverStart={() => {
+            setIsHoverEmail(true);
+          }}
           onHoverEnd={() => setIsHoverEmail(false)}
           onClick={() =>
             navigator.clipboard.writeText("adrianfrackowiak@icloud.com")
           }
+          className="relative cursor-pointer"
         >
+          {isHoverEmail && (
+            <motion.p
+              className="absolute -top-4 w-full text-center text-xs"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  ease: [0.6, 0.01, -0.05, 0.95],
+                  duration: 1,
+                },
+              }}
+            >
+              Click to copy to clickboard.
+            </motion.p>
+          )}
           <h3 className="text-[1rem] lg:text-[1.5rem] cursor-pointer">
             adrianfrackowiak@icloud.com
           </h3>
@@ -62,6 +83,9 @@ export const Header = () => {
           }}
           onHoverStart={() => setIsHoverHamburgerMenu(true)}
           onHoverEnd={() => setIsHoverHamburgerMenu(false)}
+          onClick={() => {
+            setIsMenuOpen(true);
+          }}
           className="relative space-y-1 p-2 flex flex-col justify-center cursor-pointer"
         >
           <motion.span

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export const Hero = () => {
+export const Hero: React.FC<{ isMenuOpen: boolean }> = ({ isMenuOpen }) => {
   const [isAnimationEnd, setIsAnimationEnd] = useState<boolean>(false);
 
   useEffect(() => {
@@ -9,6 +9,14 @@ export const Hero = () => {
       document.body.style.overflowY = "scroll";
     }
   }, [isAnimationEnd]);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflowY = "hidden";
+    } else if (!isMenuOpen && isAnimationEnd) {
+      document.body.style.overflowY = "scroll";
+    }
+  }, [isMenuOpen]);
 
   return (
     <div className="relative w-screen h-[50vh] sm:h-[100vh] md:h-[50vh] lg:min-h-screen">

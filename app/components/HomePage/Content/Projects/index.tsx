@@ -27,6 +27,7 @@ export const Projects = () => {
                     },
                   }
                 }
+                className="w-full flex flex-col items-center lg:items-start"
               >
                 <h3 className="text-[1rem] lg:text-[2rem] w-full sm:max-w-[450px]">
                   {title}
@@ -34,7 +35,7 @@ export const Projects = () => {
                 <p className="text-[0.8125rem] lg:text-[1.25rem] my-4 font-light w-full sm:max-w-[450px] text-gray-400">
                   {description}
                 </p>
-                <div className="flex space-x-12 my-6">
+                <div className="flex space-x-12 my-6 w-full sm:max-w-[450px]">
                   <a href={github} target="_blank">
                     Github
                   </a>
@@ -42,7 +43,7 @@ export const Projects = () => {
                     Live
                   </a>
                 </div>
-                <ul className="flex max-w-[450px] flex-wrap">
+                <ul className="flex w-full sm:max-w-[450px] flex-wrap">
                   {tags.map((tech, index) => {
                     return (
                       <li
