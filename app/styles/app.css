@@ -25,6 +25,14 @@ body::-webkit-scrollbar-thumb {
   box-shadow: inset 0 0 0 10px;
 }
 
+.menu-list {
+  overflow-y: scroll;
+}
+
+.menu-list::-webkit-scrollbar {
+  display: none;
+}
+
 .animated-gradient {
   animation: flow 10s ease-in-out infinite;
   background: radial-gradient(#2980b9, #6dd5fa);

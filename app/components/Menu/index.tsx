@@ -27,7 +27,7 @@ export const Menu: React.FC<{
           duration: 1,
         },
       }}
-      className="fixed top-0 left-0 w-screen h-screen bg-black text-white z-[9999] flex items-center justify-center"
+      className="fixed top-0 left-0 w-screen h-screen bg-black text-white z-[9999] flex items-center justify-center menu-list"
     >
       <motion.div
         initial={{ opacity: 0 }}
