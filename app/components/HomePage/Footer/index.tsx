@@ -3,8 +3,8 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 export const Footer = () => {
   return (
-    <div className="relative w-screen min-h-screen flex items-center px-8 lg:px-48">
-      <div className="h-screen flex flex-col justify-center">
+    <div className="relative w-screen min-h-screen flex items-center px-4 xl:px-20">
+      <div className="h-screen flex flex-col justify-center px-4">
         <h2 className="text-[1rem] lg:text-[1.75rem] flex items-center mb-10">
           Let's work together!{" "}
           <span>
@@ -29,7 +29,7 @@ export const Footer = () => {
         </a>
       </div>
 
-      <footer className="absolute text-[0.8125rem] lg:text-[1rem] text-center bottom-0 left-0 w-full px-8 lg:px-48 h-16 space-y-4 lg:space-y-0 flex flex-col md:flex-row justify-center md:justify-between items-center">
+      <footer className="absolute text-[0.8125rem] lg:text-[1rem] text-center bottom-0 left-0 w-full px-8 xl:px-20 h-16 space-y-4 lg:space-y-0 flex flex-col md:flex-row justify-center md:justify-between items-center">
         <p>
           2022 &copy;{" "}
           <a

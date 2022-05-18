@@ -42,7 +42,7 @@ export const Content = () => {
     <div className="relative w-screen min-h-screen">
       <div
         ref={ref}
-        className="w-full h-full flex flex-col lg:flex-row lg:px-40 py-40"
+        className="w-full h-full flex flex-col lg:flex-row px-4 2xl:px-40 py-40"
       >
         <Projects />
         <Posts />

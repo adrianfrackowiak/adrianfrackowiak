@@ -17,7 +17,7 @@ export const Posts = () => {
   return (
     <div
       ref={ref}
-      className="posts w-full lg:w-1/2 max-h-screen font-normal leading-none space-y-10 grid grid-cols-1 px-8 py-20 lg:py-0"
+      className="posts w-full lg:w-1/2 max-h-screen font-normal leading-none space-y-4 grid grid-cols-1 px-4 py-20 lg:py-4"
     >
       {posts.slice(0, 2).map((post, index) => {
         return (

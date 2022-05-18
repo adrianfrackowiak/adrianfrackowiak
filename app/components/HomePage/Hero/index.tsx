@@ -19,7 +19,7 @@ export const Hero: React.FC<{ isMenuOpen: boolean }> = ({ isMenuOpen }) => {
   }, [isMenuOpen]);
 
   return (
-    <div className="relative w-screen h-[50vh] sm:h-[100vh] md:h-[50vh] lg:min-h-screen">
+    <div className="relative w-screen sm:h-[100vh] md:h-[50vh] lg:min-h-screen flex flex-col sm:flex-row -mt-60 sm:-mt-40">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{
@@ -31,12 +31,12 @@ export const Hero: React.FC<{ isMenuOpen: boolean }> = ({ isMenuOpen }) => {
             duration: 1,
           },
         }}
-        className="max-w-[36rem] xl:max-w-[48rem] max-h-[48rem] pr-40 lg:pr-0 absolute -top-60 md:-top-48 py-10"
+        className="w-full sm:w-1/2 px-8 sm:p-0"
       >
         <img
           src="../images/me.jpg"
           alt=""
-          className="object-cover mix-blend-none"
+          className="object-cover mix-blend-none 2xl:w-[42rem]"
         />
       </motion.div>
       <motion.div
@@ -51,9 +51,9 @@ export const Hero: React.FC<{ isMenuOpen: boolean }> = ({ isMenuOpen }) => {
           },
         }}
         onAnimationComplete={() => setIsAnimationEnd(true)}
-        className="absolute -top-20 lg:-top-20 right-10 xl:right-48"
+        className="w-full sm:w-1/2 mt-16 sm:px-4 flex justify-center"
       >
-        <p className="font-normal sm:text-[1.5rem] w-[250px] md:w-[450px]">
+        <p className="font-normal text-[1rem] lg:text-[1.25rem] 2xl:text-[1.5rem] px-8 sm:px-0 sm:w-[250px] md:w-[450px]">
           Frontend Developer, currently living in Poland near Poznań. I create
           websites and web apps using React, TypeScript, and a lot of popular
           frameworks and libraries. My passion for websites has started when I

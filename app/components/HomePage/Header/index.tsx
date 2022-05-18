@@ -9,8 +9,8 @@ export const Header: React.FC<{
   const [isHoverEmail, setIsHoverEmail] = useState<boolean>(false);
 
   return (
-    <div className="min-h-screen text-black flex w-full justify-center inset-0 px-4 lg:px-20 relative top-0">
-      <header className="w-full h-32 lg:h-[16rem] flex justify-between items-center z-20 px-4 lg:px-20">
+    <div className="min-h-screen text-black flex w-full justify-center inset-0 px-4 xl:px-20 relative top-0">
+      <header className="w-full h-32 lg:h-[16rem] flex justify-between items-center z-20 px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{
@@ -47,7 +47,7 @@ export const Header: React.FC<{
               Click to copy to clickboard.
             </motion.p>
           )}
-          <h3 className="text-[1rem] lg:text-[1.5rem] cursor-pointer">
+          <h3 className="text-[1rem] lg:text-[1.25rem] 2xl:text-[1.5rem] cursor-pointer">
             adrianfrackowiak@icloud.com
           </h3>
           <motion.div
@@ -101,7 +101,7 @@ export const Header: React.FC<{
           ></motion.span>
         </motion.div>
       </header>
-      <h1 className="leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center">
+      <h1 className="leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center px-8">
         <motion.div
           initial={{ opacity: 0, y: 150 }}
           animate={{
@@ -113,7 +113,7 @@ export const Header: React.FC<{
               duration: 1,
             },
           }}
-          className={`inline-block text-[1.5rem] sm:text-[2.5rem] lg:text-[6rem] font-medium`}
+          className={`inline-block text-[2rem] sm:text-[3rem] xl:text-[4rem] 2xl:text-[6rem] font-medium`}
         >
           I'm Adrian Frąckowiak, <br /> a{" "}
           <span className="font-black">React Developer</span>.

@@ -34,7 +34,7 @@ export const Menu: React.FC<{
         animate={{
           opacity: 1,
           transition: {
-            delay: 1.5,
+            delay: 0.75,
             ease: [0.6, 0.01, -0.05, 0.95],
             duration: 1,
           },

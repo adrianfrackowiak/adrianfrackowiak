@@ -8,7 +8,7 @@ export const Projects = () => {
   });
 
   return (
-    <div ref={ref} className="projects w-full lg:w-1/2 h-full px-8">
+    <div ref={ref} className="projects w-full lg:w-1/2 h-full px-4 lg:py-4">
       <ul className="h-full flex flex-col items-center lg:items-start space-y-20">
         {ProjectsList.map(
           ({ title, description, tags, github, live }, index) => {
