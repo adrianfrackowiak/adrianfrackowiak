@@ -3,6 +3,7 @@ import { GraphQLClient, gql } from "graphql-request";
 import { IBlogPost } from "../interfaces/IBlogPost";
 import { MdKeyboardBackspace } from "react-icons/md";
 import { Header } from "~/components/HomePage/Header";
+import { useEffect } from "react";
 
 const GetBlogPostBySlug = gql`
   query BlogPageQuery($slug: String!) {
@@ -39,6 +40,10 @@ export default function BlogPostPage() {
   let data = useLoaderData();
   const blogpost: IBlogPost = data.blogpost;
   const date: Date = new Date(blogpost.date);
+
+  useEffect(() => {
+    document.body.style.overflowY = "scroll";
+  }, []);
 
   return (
     <div className="flex flex-col items-center flex-1 max-w-7xl mx-auto h-full font-satoshi selection:bg-blue-700 transition-colors bg-white py-20">
