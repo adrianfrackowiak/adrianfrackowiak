@@ -1,6 +1,19 @@
-Hello 👋 I'm Adrian and I am a software engineer based in Poland. I code with JS ES6+, TypeScript and ReactJS but also I learn Python, Solidity and React Native. I'm 20 years old and I'm looking for new job. Touch me!
+## Hello 👋 
+I'm Adrian, young and creative person available for a **React / Frontend Developer** job. Currently, I'm based in Poland, near Poznań.
 
-[Portfolio](https://adrianfrackowiak.com)
-[Github](https://adrianfrackowiak.com)
-[LinkedIn](https://adrianfrackowiak.com)
-[Email](https://adrianfrackowiak.com)
+### Skills
+**Proficient:** JavaScript, TypeScript, React, Next.js, Remix, Gatsby, GraphQL, Rest API, SCSS, TailwindCSS, GIT, VSCode, Adobe (PS, AI, XD)
+
+**Familiar:** Python, NodeJS, ExpressJS, NestJS, GSAP, Framer Motion, Postgres, Firebase, Docker, Algorithms and Data Structures
+
+**Languages:** 
+- Polish - Native
+- English - Upper Intermediate
+
+### More about me
+
+- [Portfolio](https://adrianfrackowiak.com/)
+- [Github](https://github.com/adrianfrackowiak/)
+- [LinkedIn](https://www.linkedin.com/in/adrianfrackowiak/)
+- [Email](mailto:adrianfrackowiak@icloud.com)
+
