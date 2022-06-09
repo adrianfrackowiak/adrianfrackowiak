@@ -87,7 +87,7 @@ export const Menu: React.FC<{
 
           <h4 className="font-black text-[2rem] my-4">Posts</h4>
           <ul className="space-y-2">
-            {posts.map((post, index) => {
+            {posts.reverse().map((post, index) => {
               return (
                 <li key={index}>
                   <Link to={post.slug}>{post.title}</Link>

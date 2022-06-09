@@ -23,9 +23,10 @@ const GetBlogPostBySlug = gql`
 export let loader: LoaderFunction = async ({ params }) => {
   const { slug } = params;
 
-  const graphcms = new GraphQLClient(process.env.REMIX_GRAPHCMS_API, {
+  const url: string = `${process.env.REMIX_GRAPHCMS_API}`;
+  const graphcms = new GraphQLClient(url, {
     headers: {
-      authorization: process.env.REMIX_GRAPHCMS_AUTH,
+      authorization: `${process.env.REMIX_GRAPHCMS_AUTH}`,
     },
   });
 
