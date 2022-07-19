@@ -1,5 +1,5 @@
 ## Hello 👋 
-I'm Adrian, young and creative person available for a **React / Frontend Developer** job. Currently, I'm based in Poland, near Poznań.
+I'm Adrian, young and creative person working at **MUG SOFTWARE** as a Junior Frontend Developer. Currently, I'm based in Poland, near Poznań.
 
 ### Skills
 **Proficient:** JavaScript, TypeScript, React, Next.js, Remix, Gatsby, GraphQL, Rest API, SCSS, TailwindCSS, GIT, VSCode, Adobe (PS, AI, XD)
